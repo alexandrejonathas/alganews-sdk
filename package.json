@@ -1,0 +1,11 @@
+{
+  "name": "alganews-sdk",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
