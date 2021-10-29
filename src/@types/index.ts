@@ -6,4 +6,6 @@ export type { File } from './File'
 
 export type { Metric } from './Metric'
 
+export type { Payment } from './Payment'
+
 export type { AlgaNews } from './AlgaNews'
