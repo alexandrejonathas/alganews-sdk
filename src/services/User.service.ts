@@ -21,7 +21,25 @@ class UserService extends Service {
             .then(this.getData)
     }
    
+    static getAllUsers () {
+        return this.Http.get<User.Summary[]>('/users').then(this.getData);
+    }
+    
+    static updateUser (userId: number, userData: User.Input) {
+        return this.Http.put<User.Detailed>(`/users/${userId}`, userData).then(this.getData);
+    }
 
+    static createUser (userData: User.Input) {
+        return this.Http.post<User.Detailed>('/users', userData).then(this.getData);
+    }
+
+    static activateUser(userId: number) {
+        return this.Http.put<{}>(`/users/${userId}/activation`).then(this.getData);
+    }
+
+    static deactivateUser(userId: number) {
+        return this.Http.delete<{}>(`/users/${userId}/activation`).then(this.getData);
+    }
 }
 
 export default UserService
